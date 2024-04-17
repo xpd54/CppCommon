@@ -15,7 +15,8 @@
 #include <vector>
 
 namespace CppCommon {
-
+#pragma GCC diagnostic push
+#pragma GCC diagnostic ignored "-Wdeprecated-declarations"
 std::string Encoding::ToUTF8(std::wstring_view wstr)
 {
 #if defined(__CYGWIN__) || defined(__MINGW32__) || defined(__MINGW64__)
@@ -535,5 +536,5 @@ std::string Encoding::URLDecode(std::string_view str)
 
     return result;
 }
-
+#pragma GCC diagnostic pop
 } // namespace CppCommon
